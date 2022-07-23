@@ -6,5 +6,6 @@ target 'WinHits' do
   use_frameworks!
 pod 'Charts'
   # Pods for WinHits
+pod 'Moya', '~> 15.0'
 
 end
