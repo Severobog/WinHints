@@ -15,8 +15,9 @@
 		FF01898E28885E7A00E3BB99 /* BettingHintsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF01898D28885E7A00E3BB99 /* BettingHintsCollectionVC.swift */; };
 		FF01899028885FB600E3BB99 /* BettingHintsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF01898F28885FB600E3BB99 /* BettingHintsCVCell.swift */; };
 		FF018992288871DA00E3BB99 /* HintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF018991288871DA00E3BB99 /* HintsVC.swift */; };
-		FF4AAB8F2888247800FD86E5 /* BetsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4AAB8E2888247800FD86E5 /* BetsCVCell.swift */; };
-		FF4AAB912888256000FD86E5 /* BetsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4AAB902888256000FD86E5 /* BetsCollectionVC.swift */; };
+		FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF150366288CD3BD00E242EA /* BetsCollectionViewCell.swift */; };
+		FF15036B288D0AE200E242EA /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15036A288D0AE200E242EA /* BetsViewController.swift */; };
+		FF15036D288D0DC700E242EA /* BetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15036C288D0DC700E242EA /* BetsModel.swift */; };
 		FF4E47462889EE930075DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4E47452889EE930075DAA7 /* Main.storyboard */; };
 		FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C71622889DF4F00D23F22 /* ChartsVC.swift */; };
 /* End PBXBuildFile section */
@@ -34,8 +35,9 @@
 		FF01898D28885E7A00E3BB99 /* BettingHintsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingHintsCollectionVC.swift; sourceTree = "<group>"; };
 		FF01898F28885FB600E3BB99 /* BettingHintsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingHintsCVCell.swift; sourceTree = "<group>"; };
 		FF018991288871DA00E3BB99 /* HintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsVC.swift; sourceTree = "<group>"; };
-		FF4AAB8E2888247800FD86E5 /* BetsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCVCell.swift; sourceTree = "<group>"; };
-		FF4AAB902888256000FD86E5 /* BetsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCollectionVC.swift; sourceTree = "<group>"; };
+		FF150366288CD3BD00E242EA /* BetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF15036A288D0AE200E242EA /* BetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetsViewController.swift; path = "../../View/Bets Screen/BetsViewController.swift"; sourceTree = "<group>"; };
+		FF15036C288D0DC700E242EA /* BetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsModel.swift; sourceTree = "<group>"; };
 		FF4E47452889EE930075DAA7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FF9C71622889DF4F00D23F22 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,22 +84,24 @@
 		CF225CB427E1E11500EAA251 /* WinHits */ = {
 			isa = PBXGroup;
 			children = (
-				FFAEF591288C8C0C00FA0837 /* Model */,
+				CF225CB527E1E11500EAA251 /* AppDelegate.swift */,
+				CF225CB727E1E11500EAA251 /* SceneDelegate.swift */,
+				FFE6A766288CCD7700276BF3 /* Model */,
 				FFAEF58F288C8B3200FA0837 /* View */,
-				CF225CC927E1E54000EAA251 /* Controllers */,
+				CF225CC927E1E54000EAA251 /* Controller */,
 				FFAEF590288C8B9B00FA0837 /* Supported|Router */,
 			);
 			path = WinHits;
 			sourceTree = "<group>";
 		};
-		CF225CC927E1E54000EAA251 /* Controllers */ = {
+		CF225CC927E1E54000EAA251 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FFAEF596288C8D1700FA0837 /* Profit Screen */,
 				FFAEF595288C8CB800FA0837 /* Bets Screen */,
+				FFAEF596288C8D1700FA0837 /* Profit Screen */,
 				FFAEF594288C8CA200FA0837 /* Betting Hints Screen */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		F4A14D8CBD508C44B44E09F1 /* Frameworks */ = {
@@ -111,8 +115,9 @@
 		FFAEF58F288C8B3200FA0837 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FFAEF593288C8C5000FA0837 /* Betting Hints Screen */,
 				FFAEF592288C8C3C00FA0837 /* Bets Screen */,
+				FFE6A767288CCE3900276BF3 /* Profit Screen */,
+				FFAEF593288C8C5000FA0837 /* Betting Hints Screen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,8 +125,6 @@
 		FFAEF590288C8B9B00FA0837 /* Supported|Router */ = {
 			isa = PBXGroup;
 			children = (
-				CF225CB527E1E11500EAA251 /* AppDelegate.swift */,
-				CF225CB727E1E11500EAA251 /* SceneDelegate.swift */,
 				FF4E47452889EE930075DAA7 /* Main.storyboard */,
 				CF225CBE27E1E11700EAA251 /* Assets.xcassets */,
 				CF225CC027E1E11700EAA251 /* LaunchScreen.storyboard */,
@@ -130,17 +133,10 @@
 			path = "Supported|Router";
 			sourceTree = "<group>";
 		};
-		FFAEF591288C8C0C00FA0837 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		FFAEF592288C8C3C00FA0837 /* Bets Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FF4AAB8E2888247800FD86E5 /* BetsCVCell.swift */,
+				FF150366288CD3BD00E242EA /* BetsCollectionViewCell.swift */,
 			);
 			path = "Bets Screen";
 			sourceTree = "<group>";
@@ -148,7 +144,6 @@
 		FFAEF593288C8C5000FA0837 /* Betting Hints Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FF01898F28885FB600E3BB99 /* BettingHintsCVCell.swift */,
 			);
 			path = "Betting Hints Screen";
 			sourceTree = "<group>";
@@ -165,7 +160,7 @@
 		FFAEF595288C8CB800FA0837 /* Bets Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FF4AAB902888256000FD86E5 /* BetsCollectionVC.swift */,
+				FF15036A288D0AE200E242EA /* BetsViewController.swift */,
 			);
 			path = "Bets Screen";
 			sourceTree = "<group>";
@@ -176,6 +171,46 @@
 				FF9C71622889DF4F00D23F22 /* ChartsVC.swift */,
 			);
 			path = "Profit Screen";
+			sourceTree = "<group>";
+		};
+		FFE6A766288CCD7700276BF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6A76A288CCE6A00276BF3 /* Bets Screen */,
+				FFE6A768288CCE4E00276BF3 /* Pofit Screen */,
+				FFE6A769288CCE5F00276BF3 /* Betting Hints Screen */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFE6A767288CCE3900276BF3 /* Profit Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Profit Screen";
+			sourceTree = "<group>";
+		};
+		FFE6A768288CCE4E00276BF3 /* Pofit Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Pofit Screen";
+			sourceTree = "<group>";
+		};
+		FFE6A769288CCE5F00276BF3 /* Betting Hints Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FF01898F28885FB600E3BB99 /* BettingHintsCVCell.swift */,
+			);
+			path = "Betting Hints Screen";
+			sourceTree = "<group>";
+		};
+		FFE6A76A288CCE6A00276BF3 /* Bets Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FF15036C288D0DC700E242EA /* BetsModel.swift */,
+			);
+			path = "Bets Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,10 +332,11 @@
 				FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */,
 				FF01899028885FB600E3BB99 /* BettingHintsCVCell.swift in Sources */,
 				FF01898E28885E7A00E3BB99 /* BettingHintsCollectionVC.swift in Sources */,
+				FF15036B288D0AE200E242EA /* BetsViewController.swift in Sources */,
 				CF225CB827E1E11500EAA251 /* SceneDelegate.swift in Sources */,
-				FF4AAB8F2888247800FD86E5 /* BetsCVCell.swift in Sources */,
 				FF018992288871DA00E3BB99 /* HintsVC.swift in Sources */,
-				FF4AAB912888256000FD86E5 /* BetsCollectionVC.swift in Sources */,
+				FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */,
+				FF15036D288D0DC700E242EA /* BetsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +479,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WinHits/Info.plist;
+				INFOPLIST_FILE = "WInHits/Supported|Router/info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -471,7 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WinHits/Info.plist;
+				INFOPLIST_FILE = "WInHits/Supported|Router/info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
