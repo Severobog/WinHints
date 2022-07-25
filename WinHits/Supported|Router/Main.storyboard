@@ -77,11 +77,11 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="BetsCell" id="IYz-C2-24u" customClass="BetsCollectionViewCell" customModule="WinHits" customModuleProvider="target">
-                                        <rect key="frame" x="0.5" y="0.0" width="373" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BetsCell" id="IYz-C2-24u" customClass="BetsCollectionViewCell" customModule="WinHits" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="0.0" width="370" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TaS-cw-YNe">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksh-g5-GqP">
@@ -129,7 +129,7 @@
                                                 <constraint firstItem="umO-bf-jbr" firstAttribute="centerY" secondItem="TaS-cw-YNe" secondAttribute="centerY" id="xD2-iI-VXH"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="373" height="90"/>
+                                        <size key="customSize" width="370" height="90"/>
                                         <connections>
                                             <outlet property="betResultLabel" destination="BSV-P6-Hre" id="j8Z-6i-k6u"/>
                                             <outlet property="detailBetResultLabel" destination="nVl-q6-OR8" id="Pqi-S2-FJ2"/>
@@ -188,14 +188,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HintCell" id="adt-X7-52i" customClass="BettingHintsCVCell" customModule="WinHits" customModuleProvider="target">
-                                <rect key="frame" x="21.5" y="0.0" width="371" height="70"/>
+                                <rect key="frame" x="22" y="0.0" width="370" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Df3-UU-jNc">
-                                    <rect key="frame" x="0.0" y="0.0" width="371" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="370" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Understand the Sports Betting Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bz7-oG-7G0">
-                                            <rect key="frame" x="10" y="26" width="353" height="18"/>
+                                            <rect key="frame" x="10" y="26" width="352" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -209,7 +209,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" red="0.16078431372549018" green="0.52156862745098043" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <size key="customSize" width="371" height="70"/>
+                                <size key="customSize" width="370" height="70"/>
                                 <connections>
                                     <outlet property="CellLabel" destination="bz7-oG-7G0" id="127-WT-itQ"/>
                                     <segue destination="1fU-7s-wvm" kind="show" id="u4K-3k-dfu"/>
