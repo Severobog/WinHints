@@ -21,6 +21,7 @@
 		FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15036E288DBA4E00E242EA /* PofitView.swift */; };
 		FF150371288DBA7A00E242EA /* ProfitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF150370288DBA7A00E242EA /* ProfitModel.swift */; };
 		FF150373288DBA9A00E242EA /* BettingHintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF150372288DBA9A00E242EA /* BettingHintsView.swift */; };
+		FF315543288FA0E300E0885B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF315542288FA0E300E0885B /* Router.swift */; };
 		FF4E47462889EE930075DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4E47452889EE930075DAA7 /* Main.storyboard */; };
 		FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C71622889DF4F00D23F22 /* ChartsVC.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		FF15036E288DBA4E00E242EA /* PofitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PofitView.swift; sourceTree = "<group>"; };
 		FF150370288DBA7A00E242EA /* ProfitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitModel.swift; sourceTree = "<group>"; };
 		FF150372288DBA9A00E242EA /* BettingHintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingHintsView.swift; sourceTree = "<group>"; };
+		FF315542288FA0E300E0885B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF4E47452889EE930075DAA7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FF9C71622889DF4F00D23F22 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +97,8 @@
 				FFE6A766288CCD7700276BF3 /* Model */,
 				FFAEF58F288C8B3200FA0837 /* View */,
 				CF225CC927E1E54000EAA251 /* Controller */,
-				FFAEF590288C8B9B00FA0837 /* Supported|Router */,
+				FFAEF590288C8B9B00FA0837 /* Supported */,
+				FF315541288FA0AE00E0885B /* Router */,
 			);
 			path = WinHits;
 			sourceTree = "<group>";
@@ -118,6 +121,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF315541288FA0AE00E0885B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FF315542288FA0E300E0885B /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		FFAEF58F288C8B3200FA0837 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +139,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		FFAEF590288C8B9B00FA0837 /* Supported|Router */ = {
+		FFAEF590288C8B9B00FA0837 /* Supported */ = {
 			isa = PBXGroup;
 			children = (
 				FF4E47452889EE930075DAA7 /* Main.storyboard */,
@@ -136,7 +147,7 @@
 				CF225CC027E1E11700EAA251 /* LaunchScreen.storyboard */,
 				CF225CC327E1E11700EAA251 /* Info.plist */,
 			);
-			path = "Supported|Router";
+			path = Supported;
 			sourceTree = "<group>";
 		};
 		FFAEF592288C8C3C00FA0837 /* Bets Screen */ = {
@@ -349,6 +360,7 @@
 				FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */,
 				FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */,
 				FF15036D288D0DC700E242EA /* BetsModel.swift in Sources */,
+				FF315543288FA0E300E0885B /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WInHits/Supported|Router/info.plist";
+				INFOPLIST_FILE = WinHits/Supported/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -519,7 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "WInHits/Supported|Router/info.plist";
+				INFOPLIST_FILE = WinHits/Supported/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

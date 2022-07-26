@@ -9,8 +9,8 @@ import Foundation
 
 struct Bets {
     var betName: String
-    var betResult: String
-    var detailBetResult: String
+    var betResult: String // print "Bet result: " or " "
+    var detailBetResult: String // print "WIN", "LOSE" or " ", after "Bet result"
     var profit:  String
     var bet: String
 }
