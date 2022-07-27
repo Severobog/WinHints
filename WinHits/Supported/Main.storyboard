@@ -78,10 +78,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BetsCell" id="IYz-C2-24u" customClass="BetsCollectionViewCell" customModule="WinHits" customModuleProvider="target">
-                                        <rect key="frame" x="2" y="0.0" width="370" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TaS-cw-YNe">
-                                            <rect key="frame" x="0.0" y="0.0" width="370" height="90"/>
+                                        <rect key="frame" x="0.5" y="0.0" width="373" height="58.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QGh-J1-dv0">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksh-g5-GqP">
@@ -94,13 +94,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-P6-Hre">
-                                                    <rect key="frame" x="8" y="35" width="62" height="46"/>
+                                                    <rect key="frame" x="8" y="35" width="62" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVl-q6-OR8">
-                                                    <rect key="frame" x="74" y="35" width="66" height="46"/>
+                                                    <rect key="frame" x="74" y="35" width="66" height="14.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="m7o-DQ-VNK"/>
                                                     </constraints>
@@ -109,7 +109,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umO-bf-jbr">
-                                                    <rect key="frame" x="306" y="30" width="59" height="30"/>
+                                                    <rect key="frame" x="306" y="14.5" width="59" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -117,19 +117,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BSV-P6-Hre" firstAttribute="baseline" secondItem="nVl-q6-OR8" secondAttribute="baseline" id="1Bl-YU-Zco"/>
-                                                <constraint firstItem="nVl-q6-OR8" firstAttribute="leading" secondItem="TaS-cw-YNe" secondAttribute="leading" constant="74" id="1Dn-Xc-AjL"/>
-                                                <constraint firstItem="Ksh-g5-GqP" firstAttribute="leading" secondItem="TaS-cw-YNe" secondAttribute="leadingMargin" id="2Cs-ld-IpS"/>
-                                                <constraint firstItem="nVl-q6-OR8" firstAttribute="top" secondItem="TaS-cw-YNe" secondAttribute="top" constant="35" id="3Tw-ha-7eu"/>
+                                                <constraint firstItem="nVl-q6-OR8" firstAttribute="leading" secondItem="QGh-J1-dv0" secondAttribute="leading" constant="74" id="1Dn-Xc-AjL"/>
+                                                <constraint firstItem="Ksh-g5-GqP" firstAttribute="leading" secondItem="QGh-J1-dv0" secondAttribute="leadingMargin" id="2Cs-ld-IpS"/>
+                                                <constraint firstItem="nVl-q6-OR8" firstAttribute="top" secondItem="QGh-J1-dv0" secondAttribute="top" constant="35" id="3Tw-ha-7eu"/>
                                                 <constraint firstItem="BSV-P6-Hre" firstAttribute="firstBaseline" secondItem="nVl-q6-OR8" secondAttribute="firstBaseline" id="L5w-3U-Wwq"/>
                                                 <constraint firstItem="BSV-P6-Hre" firstAttribute="leading" secondItem="Ksh-g5-GqP" secondAttribute="leading" id="bwm-cZ-nxk"/>
                                                 <constraint firstItem="nVl-q6-OR8" firstAttribute="leading" secondItem="BSV-P6-Hre" secondAttribute="trailing" constant="4" id="m0A-g0-yNe"/>
                                                 <constraint firstAttribute="bottom" secondItem="nVl-q6-OR8" secondAttribute="bottom" constant="9" id="mFz-AF-MIU"/>
                                                 <constraint firstItem="umO-bf-jbr" firstAttribute="leading" secondItem="Ksh-g5-GqP" secondAttribute="trailing" constant="54" id="owB-8m-bdt"/>
-                                                <constraint firstItem="Ksh-g5-GqP" firstAttribute="top" secondItem="TaS-cw-YNe" secondAttribute="top" constant="11" id="oyz-6Z-DFS"/>
-                                                <constraint firstItem="umO-bf-jbr" firstAttribute="centerY" secondItem="TaS-cw-YNe" secondAttribute="centerY" id="xD2-iI-VXH"/>
+                                                <constraint firstItem="Ksh-g5-GqP" firstAttribute="top" secondItem="QGh-J1-dv0" secondAttribute="top" constant="11" id="oyz-6Z-DFS"/>
+                                                <constraint firstItem="umO-bf-jbr" firstAttribute="centerY" secondItem="QGh-J1-dv0" secondAttribute="centerY" id="xD2-iI-VXH"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="370" height="90"/>
                                         <connections>
                                             <outlet property="betResultLabel" destination="BSV-P6-Hre" id="j8Z-6i-k6u"/>
                                             <outlet property="detailBetResultLabel" destination="nVl-q6-OR8" id="Pqi-S2-FJ2"/>
@@ -139,34 +138,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-WE-qrj">
-                                <rect key="frame" x="343" y="711" width="51" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="51" id="F66-lZ-q9t"/>
-                                    <constraint firstAttribute="height" constant="51" id="F9C-zE-rPH"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="+" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="38"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="ycC-41-tK8" kind="popoverPresentation" popoverAnchorView="Kmg-WE-qrj" id="kbE-1F-LW5">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QOx-PN-UAf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Kmg-WE-qrj" firstAttribute="bottom" secondItem="QOx-PN-UAf" secondAttribute="bottom" constant="-51" id="PGN-ea-Pdh"/>
-                            <constraint firstItem="QOx-PN-UAf" firstAttribute="trailing" secondItem="Kmg-WE-qrj" secondAttribute="trailing" constant="20" id="vfr-n8-kIr"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bets" id="NmY-UT-bdx"/>
+                    <navigationItem key="navigationItem" title="Bets" id="NmY-UT-bdx">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="cp7-MU-LQc">
+                            <connections>
+                                <segue destination="ycC-41-tK8" kind="presentation" id="Zu7-bX-aVq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="rNi-se-Tbp" id="GL9-KA-KHa"/>
                     </connections>
@@ -179,19 +161,19 @@
         <scene sceneID="KSR-VJ-Yw7">
             <objects>
                 <viewController id="ycC-41-tK8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xiD-Bs-6IX">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiD-Bs-6IX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lB9-wX-87b">
-                                <rect key="frame" x="29" y="75" width="356" height="430"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="28" y="89" width="358" height="430"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <connections>
                                     <segue destination="LVc-8T-hYF" kind="embed" id="25d-7S-N5Q"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="i1p-1E-lmz"/>
+                        <viewLayoutGuide key="safeArea" id="gXW-7o-TXM"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rvx-yQ-uuT"/>
@@ -416,11 +398,11 @@ Check out the lines for Stetson in their next game before everyone else catches 
             <objects>
                 <viewController id="LVc-8T-hYF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDC-WS-XRT">
-                        <rect key="frame" x="0.0" y="0.0" width="356" height="430"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="430"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New bet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXI-yh-ere">
-                                <rect key="frame" x="129" y="30" width="99" height="22"/>
+                                <rect key="frame" x="129" y="30" width="101" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -488,6 +470,7 @@ Check out the lines for Stetson in their next game before everyone else catches 
                                 </buttonConfiguration>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="8dX-Qg-AsN"/>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.52156862749999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.16078431369999999" green="0.52156862749999999" blue="0.69510277730000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
