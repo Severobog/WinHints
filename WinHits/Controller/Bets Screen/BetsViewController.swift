@@ -31,6 +31,10 @@ class BetsViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "bgimage")
+        self.view.insertSubview(backgroundImage, at: 0)
     }
     
 }
@@ -82,7 +86,7 @@ extension BetsViewController: UICollectionViewDelegateFlowLayout {
         let paddingWidth = itemsPerRow + 1
         let avaibaleWidth = collectionView.frame.width - paddingWidth
         let widthPerItems = avaibaleWidth / itemsPerRow
-        return CGSize(width: widthPerItems, height: 90)
+        return CGSize(width: widthPerItems, height: collectionView.frame.width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

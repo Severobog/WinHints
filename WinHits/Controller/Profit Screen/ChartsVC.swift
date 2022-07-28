@@ -19,6 +19,11 @@ class ChartsViewController: UIViewController {
         let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
                 
         setChart(dataPoints: months, values: unitsSold)
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "bgimage")
+        self.view.insertSubview(backgroundImage, at: 0)
+        lineChartView.backgroundColor = .tintColor
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
