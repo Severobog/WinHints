@@ -31,6 +31,10 @@ class BetsViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "bgimage")
+        self.view.insertSubview(backgroundImage, at: 0)
     }
     
 }

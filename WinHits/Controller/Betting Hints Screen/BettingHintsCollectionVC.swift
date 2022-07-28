@@ -8,7 +8,9 @@
 import UIKit
 
 
-class BettingHintsVC: UICollectionViewController {
+class BettingHintsVC: UIViewController {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     let hintsArray = ["Understand the Sports Betting Language",
                       "Ignore Personal Biases",
@@ -20,41 +22,53 @@ class BettingHintsVC: UICollectionViewController {
                       "Bet At the Right Time",
                       "Hint #9",
                       "Hint #10"
-    ]
+                        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "bgimage")
+        self.view.insertSubview(backgroundImage, at: 0)
     }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-       
-        return 1
+}
+
+extension BettingHintsVC: UICollectionViewDataSource, UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        hintsArray.count
     }
 
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        return hintsArray.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HintCell", for: indexPath) as! BettingHintsCVCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HintCell", for: indexPath) as? BettingHintsCVCell {
+        
+            cell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
+            cell.CellLabel.text = hintsArray[indexPath.row]
     
-        cell.CellLabel.text = hintsArray[indexPath.row]
+            return cell
+        }
     
-        return cell
+        return UICollectionViewCell()
+        
     }
 
 
 }
 
 extension BettingHintsVC: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 1
-        let paddingWidth = 20 * (itemsPerRow + 1)
+        let paddingWidth = itemsPerRow + 1
         let avaibaleWidth = collectionView.frame.width - paddingWidth
         let widthPerItems = avaibaleWidth / itemsPerRow
-        return CGSize(width: widthPerItems, height: 70)
+        return CGSize(width: widthPerItems, height: collectionView.frame.width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -64,4 +78,7 @@ extension BettingHintsVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
+    
 }
+
+

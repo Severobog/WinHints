@@ -9,5 +9,10 @@ import UIKit
 
 class HintsVC: UIViewController {
  
+    override func viewDidLoad() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "bgimage")
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
 }
 
