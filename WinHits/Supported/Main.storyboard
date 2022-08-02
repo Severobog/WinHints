@@ -150,7 +150,7 @@
                                 <rect key="frame" x="28" y="89" width="358" height="430"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <connections>
-                                    <segue destination="LVc-8T-hYF" kind="embed" id="25d-7S-N5Q"/>
+                                    <segue destination="LVc-8T-hYF" kind="embed" identifier="" id="25d-7S-N5Q"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -388,10 +388,10 @@ Check out the lines for Stetson in their next game before everyone else catches 
             </objects>
             <point key="canvasLocation" x="605.79710144927537" y="638.83928571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--New BetVC-->
         <scene sceneID="C7y-FR-vXO">
             <objects>
-                <viewController id="LVc-8T-hYF" sceneMemberID="viewController">
+                <viewController id="LVc-8T-hYF" customClass="NewBetVC" customModule="WinHits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDC-WS-XRT">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="430"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,6 +474,13 @@ Check out the lines for Stetson in their next game before everyone else catches 
                             <constraint firstAttribute="trailing" secondItem="uXI-yh-ere" secondAttribute="trailing" constant="128" id="Zyd-yX-NZ8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="betAmount" destination="iRY-oo-xzx" id="Rx7-C0-3td"/>
+                        <outlet property="betName" destination="WXf-O1-EA7" id="3KO-mN-6yq"/>
+                        <outlet property="betOdds" destination="eWi-98-pe8" id="Bco-ck-hCf"/>
+                        <outlet property="loseButton" destination="e8f-cp-6MZ" id="cEc-Xv-thO"/>
+                        <outlet property="winButton" destination="cQY-lK-NkZ" id="NDS-jV-xNX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ5-DI-c7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,12 +14,12 @@ class BetsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var detailBetResultLabel: UILabel!
     @IBOutlet weak var profitLabel: UILabel!
     
-    var bets: Bets? {
+    var bets: Bet? {
         didSet {
             mainLabel.text = bets?.betName
-            betResultLabel.text = bets?.betResult
-            detailBetResultLabel.text = bets?.detailBetResult
-            profitLabel.text = bets?.profit
+            betResultLabel.text = "Bet result: "
+            detailBetResultLabel.text = bets?.bet
+            profitLabel.text = bets?.amount
             
             mainLabel.textColor = .white
             betResultLabel.textColor = .white
