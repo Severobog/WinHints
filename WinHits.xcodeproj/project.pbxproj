@@ -24,6 +24,7 @@
 		FF315543288FA0E300E0885B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF315542288FA0E300E0885B /* Router.swift */; };
 		FF4E47462889EE930075DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4E47452889EE930075DAA7 /* Main.storyboard */; };
 		FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C71622889DF4F00D23F22 /* ChartsVC.swift */; };
+		FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FF315542288FA0E300E0885B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF4E47452889EE930075DAA7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FF9C71622889DF4F00D23F22 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
+		FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewBetVC.swift; path = WinHits/Supported/NewBetVC.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		FFAEF595288C8CB800FA0837 /* Bets Screen */ = {
 			isa = PBXGroup;
 			children = (
+				FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */,
 				FF15036A288D0AE200E242EA /* BetsViewController.swift */,
 			);
 			path = "Bets Screen";
@@ -355,6 +358,7 @@
 				FF01899028885FB600E3BB99 /* BettingHintsCVCell.swift in Sources */,
 				FF01898E28885E7A00E3BB99 /* BettingHintsCollectionVC.swift in Sources */,
 				FF15036B288D0AE200E242EA /* BetsViewController.swift in Sources */,
+				FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */,
 				CF225CB827E1E11500EAA251 /* SceneDelegate.swift in Sources */,
 				FF018992288871DA00E3BB99 /* HintsVC.swift in Sources */,
 				FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */,

@@ -11,20 +11,7 @@ class BetsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var betsArray: [Bets] = {
-        var blankBets = Bets(betName: "Bet #1",
-                             betResult: "Bet result:",
-                             detailBetResult: "",
-                             profit: "100",
-                             bet: "WIN")
-        
-        var blankBets2 = Bets(betName: "Bet #2",
-                              betResult: "Bet result:",
-                              detailBetResult: "",
-                              profit: "300",
-                              bet: "")
-        return [blankBets, blankBets2]
-    }()
+    var betList = Bet.getBetList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,32 +29,32 @@ class BetsViewController: UIViewController {
 extension BetsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        betsArray.count
+        betList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let betCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BetsCell", for: indexPath) as? BetsCollectionViewCell {
             
-            betCell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
-            
-            if betsArray[indexPath.row].bet != "" {
-                if betsArray[indexPath.row].bet == "WIN" {
-                    betsArray[indexPath.row].detailBetResult = "WIN"
-                    betsArray[indexPath.row].profit += "+"
-                    betCell.detailBetResultLabel.textColor = .green
-                } else if betsArray[indexPath.row].bet == "LOSE" {
-                    betsArray[indexPath.row].detailBetResult = "LOSE"
-                    betsArray[indexPath.row].profit += "-"
-                    betCell.detailBetResultLabel.textColor = .red
+                betCell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
+                
+                if betList[indexPath.row].bet != "" {
+                    if betList[indexPath.row].bet == "WIN" {
+                        betList[indexPath.row].amount += " +"
+                        betCell.detailBetResultLabel.textColor = .green
+                        betCell.detailBetResultLabel.text = "WIN"
+                    } else { // if .bet == "LOSE"
+                        betList[indexPath.row].amount += " -"
+                        betCell.detailBetResultLabel.textColor = .red
+                        betCell.detailBetResultLabel.text = "LOSE"
+                    }
+                } else {
+                    betCell.betResultLabel.isHidden = true
+                    betCell.detailBetResultLabel.isHidden = true
+                    betList[indexPath.row].amount += " +"
                 }
-            } else {
-                betCell.detailBetResultLabel.isHidden = true
-                betCell.betResultLabel.isHidden = true
-                betsArray[indexPath.row].profit += "+"
-            }
             
-            betCell.bets = betsArray[indexPath.row]
+                betCell.bets = betList[indexPath.row]
             
             return betCell
         }
@@ -75,8 +62,7 @@ extension BetsViewController: UICollectionViewDataSource, UICollectionViewDelega
         return UICollectionViewCell()
             
     }
-    
-    
+
 }
 
 extension BetsViewController: UICollectionViewDelegateFlowLayout {
