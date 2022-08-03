@@ -9,7 +9,8 @@ import UIKit
 
 class BetsViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView:
+        UICollectionView!
     
     var betList = Bet.getBetList()
     

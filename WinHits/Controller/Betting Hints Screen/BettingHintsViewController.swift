@@ -7,22 +7,12 @@
 
 import UIKit
 
-
-class BettingHintsVC: UIViewController {
+class BettingHintsViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView:
+        UICollectionView!
     
-    let hintsArray = ["Understand the Sports Betting Language",
-                      "Ignore Personal Biases",
-                      "Bet On What You Know",
-                      "Don’t Get Too High",
-                      "Don’t Get Too Low, Either",
-                      "Set a Budget",
-                      "Research",
-                      "Bet At the Right Time",
-                      "Hint #9",
-                      "Hint #10"
-                        ]
+    var hintsArray = Hint.getHintList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,23 +23,35 @@ class BettingHintsVC: UIViewController {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "bgimage")
         self.view.insertSubview(backgroundImage, at: 0)
-    }
+        
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
+                let detailHintVC = segue.destination as! DetailHintsVC
+                detailHintVC.hintLabelText = hintsArray[indexPath.row].hintLabel
+                detailHintVC.hintMainText = hintsArray[indexPath.row].hintText
+            }
+        }
+    }
 }
 
-extension BettingHintsVC: UICollectionViewDataSource, UICollectionViewDelegate {
+extension BettingHintsViewController:
+    UICollectionViewDataSource,
+    UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         hintsArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HintCell", for: indexPath) as? BettingHintsCVCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HintCell", for: indexPath) as? BettingHintsCollectionViewCell {
         
             cell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
-            cell.CellLabel.text = hintsArray[indexPath.row]
+            cell.hintLabel.text = hintsArray[indexPath.row].hintLabel
     
             return cell
         }
@@ -61,7 +63,7 @@ extension BettingHintsVC: UICollectionViewDataSource, UICollectionViewDelegate {
 
 }
 
-extension BettingHintsVC: UICollectionViewDelegateFlowLayout {
+extension BettingHintsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 1
@@ -80,5 +82,4 @@ extension BettingHintsVC: UICollectionViewDelegateFlowLayout {
     }
     
 }
-
 

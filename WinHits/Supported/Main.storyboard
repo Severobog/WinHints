@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="-168" y="1337"/>
         </scene>
-        <!--HintsVC-->
+        <!--Detail HintsVC-->
         <scene sceneID="18m-1X-PxX">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="1fU-7s-wvm" customClass="HintsVC" customModule="WinHits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="1fU-7s-wvm" customClass="DetailHintsVC" customModule="WinHits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NIS-94-dUK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,24 +200,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="573" id="UUH-yR-LOh"/>
                                 </constraints>
-                                <string key="text">While tip No. 3 may seem to starkly contrast No. 2, they both have very different meanings. While avoiding the teams you root for, it’s still very advisable to stick to the sports and games you know. 
-
-If you know nothing about tennis, it’s probably a good idea to steer clear of betting on the French Open. Maybe you’re a big Duke basketball fan, though, and just watched the Blue Devils get blindsided by Stetson in non-conference play. 
-
-Check out the lines for Stetson in their next game before everyone else catches on. Use the sports you know and enjoy watching to provide information without even having to do extra work.While tip No. 3 may seem to starkly contrast No. 2, they both have very different meanings. While avoiding the teams you root for, it’s still very advisable to stick to the sports and games you know. 
-
-If you know nothing about tennis, it’s probably a good idea to steer clear of betting on the French Open. Maybe you’re a big Duke basketball fan, though, and just watched the Blue Devils get blindsided by Stetson in non-conference play. 
-
-Check out the lines for Stetson in their next game before everyone else catches on. Use the sports you know and enjoy watching to provide information without even having to do extra work.While tip No. 3 may seem to starkly contrast No. 2, they both have very different meanings. While avoiding the teams you root for, it’s still very advisable to stick to the sports and games you know. 
-
-If you know nothing about tennis, it’s probably a good idea to steer clear of betting on the French Open. Maybe you’re a big Duke basketball fan, though, and just watched the Blue Devils get blindsided by Stetson in non-conference play. 
-
-Check out the lines for Stetson in their next game before everyone else catches on. Use the sports you know and enjoy watching to provide information without even having to do extra work.</string>
                                 <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Understand the Sports Betting Language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMe-P0-sps">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMe-P0-sps">
                                 <rect key="frame" x="20" y="125" width="374" height="62"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.52156862749999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -243,6 +230,10 @@ Check out the lines for Stetson in their next game before everyone else catches 
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="U3G-lq-hxR"/>
+                    <connections>
+                        <outlet property="HintLabel" destination="uMe-P0-sps" id="leY-zg-cwy"/>
+                        <outlet property="HintText" destination="ebV-V0-BUi" id="aZa-VC-iHF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEI-fm-RhW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -251,7 +242,7 @@ Check out the lines for Stetson in their next game before everyone else catches 
         <!--Betting Hints-->
         <scene sceneID="pxJ-2P-n4k">
             <objects>
-                <viewController id="A6Q-tu-zSu" customClass="BettingHintsVC" customModule="WinHits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A6Q-tu-zSu" customClass="BettingHintsViewController" customModule="WinHits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxN-qM-Vyi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,14 +258,14 @@ Check out the lines for Stetson in their next game before everyone else catches 
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HintCell" id="adt-X7-52i" customClass="BettingHintsCVCell" customModule="WinHits" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HintCell" id="adt-X7-52i" customClass="BettingHintsCollectionViewCell" customModule="WinHits" customModuleProvider="target">
                                         <rect key="frame" x="17.5" y="0.0" width="434" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Df3-UU-jNc">
                                             <rect key="frame" x="0.0" y="0.0" width="434" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Understand the Sports Betting Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bz7-oG-7G0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bz7-oG-7G0">
                                                     <rect key="frame" x="32" y="26" width="402" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="402" id="vBN-Lq-WlA"/>
@@ -294,8 +285,8 @@ Check out the lines for Stetson in their next game before everyone else catches 
                                         <color key="backgroundColor" red="0.16078431372549018" green="0.52156862745098043" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="customSize" width="434" height="68"/>
                                         <connections>
-                                            <outlet property="CellLabel" destination="bz7-oG-7G0" id="127-WT-itQ"/>
-                                            <segue destination="1fU-7s-wvm" kind="show" id="u4K-3k-dfu"/>
+                                            <outlet property="hintLabel" destination="bz7-oG-7G0" id="pmq-we-Z6U"/>
+                                            <segue destination="1fU-7s-wvm" kind="show" identifier="ShowDetail" id="u4K-3k-dfu"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
