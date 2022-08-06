@@ -15,7 +15,6 @@
 		FF01898E28885E7A00E3BB99 /* BettingHintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF01898D28885E7A00E3BB99 /* BettingHintsViewController.swift */; };
 		FF01899028885FB600E3BB99 /* BettingHintsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF01898F28885FB600E3BB99 /* BettingHintsModel.swift */; };
 		FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF150366288CD3BD00E242EA /* BetsCollectionViewCell.swift */; };
-		FF15036B288D0AE200E242EA /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15036A288D0AE200E242EA /* BetsViewController.swift */; };
 		FF15036D288D0DC700E242EA /* BetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15036C288D0DC700E242EA /* BetsModel.swift */; };
 		FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15036E288DBA4E00E242EA /* PofitView.swift */; };
 		FF150371288DBA7A00E242EA /* ProfitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF150370288DBA7A00E242EA /* ProfitModel.swift */; };
@@ -24,6 +23,7 @@
 		FF4E47462889EE930075DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4E47452889EE930075DAA7 /* Main.storyboard */; };
 		FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C71622889DF4F00D23F22 /* ChartsVC.swift */; };
 		FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */; };
+		FFEF1DB7289D137900789A69 /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEF1DB6289D137900789A69 /* BetsViewController.swift */; };
 		FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF82035289A917100355D9F /* DetailHintsVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,6 @@
 		FF01898D28885E7A00E3BB99 /* BettingHintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingHintsViewController.swift; sourceTree = "<group>"; };
 		FF01898F28885FB600E3BB99 /* BettingHintsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingHintsModel.swift; sourceTree = "<group>"; };
 		FF150366288CD3BD00E242EA /* BetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCollectionViewCell.swift; sourceTree = "<group>"; };
-		FF15036A288D0AE200E242EA /* BetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsViewController.swift; sourceTree = "<group>"; };
 		FF15036C288D0DC700E242EA /* BetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsModel.swift; sourceTree = "<group>"; };
 		FF15036E288DBA4E00E242EA /* PofitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PofitView.swift; sourceTree = "<group>"; };
 		FF150370288DBA7A00E242EA /* ProfitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitModel.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		FF4E47452889EE930075DAA7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FF9C71622889DF4F00D23F22 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewBetVC.swift; path = WinHits/Supported/NewBetVC.swift; sourceTree = SOURCE_ROOT; };
+		FFEF1DB6289D137900789A69 /* BetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BetsViewController.swift; path = ../../../../../BetsViewController.swift; sourceTree = "<group>"; };
 		FFF82035289A917100355D9F /* DetailHintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHintsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +180,7 @@
 		FFAEF595288C8CB800FA0837 /* Bets Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FF15036A288D0AE200E242EA /* BetsViewController.swift */,
+				FFEF1DB6289D137900789A69 /* BetsViewController.swift */,
 				FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */,
 			);
 			path = "Bets Screen";
@@ -358,8 +358,8 @@
 				FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */,
 				FF01899028885FB600E3BB99 /* BettingHintsModel.swift in Sources */,
 				FF01898E28885E7A00E3BB99 /* BettingHintsViewController.swift in Sources */,
-				FF15036B288D0AE200E242EA /* BetsViewController.swift in Sources */,
 				FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */,
+				FFEF1DB7289D137900789A69 /* BetsViewController.swift in Sources */,
 				CF225CB827E1E11500EAA251 /* SceneDelegate.swift in Sources */,
 				FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */,
 				FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */,

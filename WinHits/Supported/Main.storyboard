@@ -60,7 +60,7 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BetsCell" id="IYz-C2-24u" customClass="BetsCollectionViewCell" customModule="WinHits" customModuleProvider="target">
                                         <rect key="frame" x="0.5" y="0.0" width="373" height="58.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QGh-J1-dv0">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -126,12 +126,12 @@
                     <navigationItem key="navigationItem" title="Bets" id="NmY-UT-bdx">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="cp7-MU-LQc">
                             <connections>
-                                <segue destination="ycC-41-tK8" kind="presentation" id="Zu7-bX-aVq"/>
+                                <segue destination="ycC-41-tK8" kind="presentation" identifier="AddBet" id="Zu7-bX-aVq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="rNi-se-Tbp" id="GL9-KA-KHa"/>
+                        <outlet property="collectionView" destination="rNi-se-Tbp" id="RiH-Mn-1mE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoj-8j-voN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -394,19 +394,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bet name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXf-O1-EA7">
-                                <rect key="frame" x="20" y="97" width="315" height="34"/>
+                                <rect key="frame" x="17" y="97" width="315" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iRY-oo-xzx">
-                                <rect key="frame" x="20" y="139" width="315" height="34"/>
+                                <rect key="frame" x="17" y="139" width="315" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Odds" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWi-98-pe8">
-                                <rect key="frame" x="20" y="181" width="315" height="34"/>
+                                <rect key="frame" x="17" y="181" width="315" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -427,6 +427,9 @@
                                     <color key="baseForegroundColor" systemColor="systemGreenColor"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="winButtonPressed:" destination="LVc-8T-hYF" eventType="touchUpInside" id="KYj-1m-oiP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8f-cp-6MZ">
                                 <rect key="frame" x="193" y="272" width="142" height="53"/>
@@ -437,6 +440,9 @@
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loseButtonPressed:" destination="LVc-8T-hYF" eventType="touchUpInside" id="TMu-3y-MLe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* You can ommit this parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEQ-VK-jVl">
                                 <rect key="frame" x="82" y="333" width="191" height="16"/>
@@ -449,11 +455,14 @@
                                 <rect key="frame" x="50" y="357" width="257" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Create a bet">
+                                <buttonConfiguration key="configuration" style="filled" title="Не нажимать! (крашнится)">
                                     <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="14"/>
                                     <color key="baseForegroundColor" red="0.16078431369999999" green="0.52156862749999999" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addNewBet:" destination="LVc-8T-hYF" eventType="touchUpInside" id="Jhs-hF-6A8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8dX-Qg-AsN"/>
@@ -468,9 +477,9 @@
                     <connections>
                         <outlet property="betAmount" destination="iRY-oo-xzx" id="Rx7-C0-3td"/>
                         <outlet property="betName" destination="WXf-O1-EA7" id="3KO-mN-6yq"/>
-                        <outlet property="betOdds" destination="eWi-98-pe8" id="Bco-ck-hCf"/>
-                        <outlet property="loseButton" destination="e8f-cp-6MZ" id="cEc-Xv-thO"/>
-                        <outlet property="winButton" destination="cQY-lK-NkZ" id="NDS-jV-xNX"/>
+                        <outlet property="betOdds" destination="eWi-98-pe8" id="Ctx-fm-bOc"/>
+                        <outlet property="loseButton" destination="e8f-cp-6MZ" id="0In-9h-YMV"/>
+                        <outlet property="winButton" destination="cQY-lK-NkZ" id="Onr-xL-ld9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ5-DI-c7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
