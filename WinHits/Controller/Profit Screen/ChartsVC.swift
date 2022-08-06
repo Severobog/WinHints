@@ -15,8 +15,8 @@ class ChartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+        var months = ["Jan", "Feb", "Mar", "Apr"]
+        var unitsSold = [100.0, 100.0, 100.0, -100.0]
                 
         setChart(dataPoints: months, values: unitsSold)
         
@@ -37,7 +37,7 @@ class ChartsViewController: UIViewController {
             
 
             
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Units Sold")
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Profits")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
     }
