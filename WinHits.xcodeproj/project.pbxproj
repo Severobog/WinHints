@@ -23,8 +23,8 @@
 		FF4E47462889EE930075DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4E47452889EE930075DAA7 /* Main.storyboard */; };
 		FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C71622889DF4F00D23F22 /* ChartsVC.swift */; };
 		FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */; };
-		FFEF1DB7289D137900789A69 /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEF1DB6289D137900789A69 /* BetsViewController.swift */; };
 		FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF82035289A917100355D9F /* DetailHintsVC.swift */; };
+		FFFE6E3D289E4E79007DC08B /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +48,8 @@
 		FF4E47452889EE930075DAA7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FF9C71622889DF4F00D23F22 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewBetVC.swift; path = WinHits/Supported/NewBetVC.swift; sourceTree = SOURCE_ROOT; };
-		FFEF1DB6289D137900789A69 /* BetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BetsViewController.swift; path = ../../../../../BetsViewController.swift; sourceTree = "<group>"; };
 		FFF82035289A917100355D9F /* DetailHintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHintsVC.swift; sourceTree = "<group>"; };
+		FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +180,7 @@
 		FFAEF595288C8CB800FA0837 /* Bets Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FFEF1DB6289D137900789A69 /* BetsViewController.swift */,
+				FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */,
 				FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */,
 			);
 			path = "Bets Screen";
@@ -353,13 +353,13 @@
 			files = (
 				FF150371288DBA7A00E242EA /* ProfitModel.swift in Sources */,
 				CF225CB627E1E11500EAA251 /* AppDelegate.swift in Sources */,
+				FFFE6E3D289E4E79007DC08B /* BetsViewController.swift in Sources */,
 				FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */,
 				FF150373288DBA9A00E242EA /* BettingHintsView.swift in Sources */,
 				FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */,
 				FF01899028885FB600E3BB99 /* BettingHintsModel.swift in Sources */,
 				FF01898E28885E7A00E3BB99 /* BettingHintsViewController.swift in Sources */,
 				FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */,
-				FFEF1DB7289D137900789A69 /* BetsViewController.swift in Sources */,
 				CF225CB827E1E11500EAA251 /* SceneDelegate.swift in Sources */,
 				FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */,
 				FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */,
@@ -511,6 +511,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -522,7 +523,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -539,6 +540,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -550,7 +552,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

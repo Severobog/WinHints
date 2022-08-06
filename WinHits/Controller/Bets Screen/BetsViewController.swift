@@ -31,6 +31,7 @@ class BetsViewController: UIViewController {
         backgroundImage.image = UIImage(named: "bgimage")
         self.view.insertSubview(backgroundImage, at: 0)
     }
+    
 }
 
 extension BetsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -48,32 +49,33 @@ extension BetsViewController: UICollectionViewDataSource, UICollectionViewDelega
                 if betList[indexPath.row].bet != "" {
                     if betList[indexPath.row].bet == "WIN" {
                         profitList.append(Double(betList[indexPath.row].amount)!)
-                        shittyList.append("\(indexPath.row)")
+                        shittyList.append("shit")
                         betList[indexPath.row].amount += " +"
                         betCell.detailBetResultLabel.textColor = .green
                         betCell.detailBetResultLabel.text = "WIN"
                     } else { // if .bet == "LOSE"
                         profitList.append(Double(betList[indexPath.row].amount)! * -1)
-                        shittyList.append("\(indexPath.row)")
+                        shittyList.append("shit")
                         betList[indexPath.row].amount += " -"
                         betCell.detailBetResultLabel.textColor = .red
                         betCell.detailBetResultLabel.text = "LOSE"
                     }
                 } else {
                     profitList.append(Double(betList[indexPath.row].amount)!)
-                    shittyList.append("\(indexPath.row)")
+                    shittyList.append("shit")
                     betCell.betResultLabel.isHidden = true
                     betCell.detailBetResultLabel.isHidden = true
                     betList[indexPath.row].amount += " +"
                 }
             
                 betCell.bets = betList[indexPath.row]
-            
+            print(shittyList)
+            print(profitList)
+
             return betCell
         }
+                return UICollectionViewCell()
         
-        return UICollectionViewCell()
-            
     }
     
 }

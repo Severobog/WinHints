@@ -15,8 +15,8 @@ class ChartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var months = ["Jan", "Feb", "Mar", "Apr"]
-        var unitsSold = [100.0, 100.0, 100.0, -100.0]
+        var months = [" ", "Jan", "Feb", "Mar", "Apr"]
+        var unitsSold = [0.0, 100.0, 100.0, 1000.0, -100.0]
                 
         setChart(dataPoints: months, values: unitsSold)
         

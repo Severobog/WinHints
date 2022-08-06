@@ -16,6 +16,8 @@ class NewBetVC: UIViewController {
     @IBOutlet weak var loseButton: UIButton!
     @IBOutlet weak var winButton: UIButton!
     
+    let destinationVC = BetsViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,12 +35,8 @@ class NewBetVC: UIViewController {
     
     @IBAction func addNewBet(_ sender: Any) {
         newBet = Bet(betName: betName.text, amount: betAmount.text, bet: bet)
-        let destinationVC = BetsViewController()
         destinationVC.betList.append(newBet)
-        let indexPath = IndexPath(row: destinationVC.betList.count - 1, section: 0)
-//        destinationVC.collectionView.insertItems(at: [indexPath])
+        print(destinationVC.betList)
+//        let indexPath = IndexPath(row: destinationVC.betList.count - 1, section: 0)
     }
- 
-
-    
 }
