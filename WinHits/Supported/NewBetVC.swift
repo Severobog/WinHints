@@ -36,7 +36,7 @@ class NewBetVC: UIViewController {
         let destinationVC = BetsViewController()
         destinationVC.betList.append(newBet)
         let indexPath = IndexPath(row: destinationVC.betList.count - 1, section: 0)
-        destinationVC.collectionView.insertItems(at: [indexPath])
+//        destinationVC.collectionView.insertItems(at: [indexPath])
     }
  
 
