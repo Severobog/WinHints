@@ -21,10 +21,10 @@
 		FF150373288DBA9A00E242EA /* BettingHintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF150372288DBA9A00E242EA /* BettingHintsView.swift */; };
 		FF315543288FA0E300E0885B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF315542288FA0E300E0885B /* Router.swift */; };
 		FF4E47462889EE930075DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4E47452889EE930075DAA7 /* Main.storyboard */; };
+		FF5BBADE28A0710D00293728 /* NewBetSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BBADD28A0710D00293728 /* NewBetSubVC.swift */; };
 		FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C71622889DF4F00D23F22 /* ChartsVC.swift */; };
 		FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */; };
 		FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF82035289A917100355D9F /* DetailHintsVC.swift */; };
-		FFFE6E3D289E4E79007DC08B /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */; };
 		FFFE6E41289EECBF007DC08B /* BetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +47,10 @@
 		FF150372288DBA9A00E242EA /* BettingHintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingHintsView.swift; sourceTree = "<group>"; };
 		FF315542288FA0E300E0885B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF4E47452889EE930075DAA7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FF5BBADD28A0710D00293728 /* NewBetSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBetSubVC.swift; sourceTree = "<group>"; };
 		FF9C71622889DF4F00D23F22 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewBetVC.swift; path = WinHits/Supported/NewBetVC.swift; sourceTree = SOURCE_ROOT; };
 		FFF82035289A917100355D9F /* DetailHintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHintsVC.swift; sourceTree = "<group>"; };
-		FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetsViewController.swift; sourceTree = "<group>"; };
 		FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,9 +182,9 @@
 		FFAEF595288C8CB800FA0837 /* Bets Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */,
 				FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */,
 				FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */,
+				FF5BBADD28A0710D00293728 /* NewBetSubVC.swift */,
 			);
 			path = "Bets Screen";
 			sourceTree = "<group>";
@@ -356,7 +356,6 @@
 			files = (
 				FF150371288DBA7A00E242EA /* ProfitModel.swift in Sources */,
 				CF225CB627E1E11500EAA251 /* AppDelegate.swift in Sources */,
-				FFFE6E3D289E4E79007DC08B /* BetsViewController.swift in Sources */,
 				FFFE6E41289EECBF007DC08B /* BetsCollectionViewController.swift in Sources */,
 				FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */,
 				FF150373288DBA9A00E242EA /* BettingHintsView.swift in Sources */,
@@ -368,6 +367,7 @@
 				FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */,
 				FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */,
 				FF15036D288D0DC700E242EA /* BetsModel.swift in Sources */,
+				FF5BBADE28A0710D00293728 /* NewBetSubVC.swift in Sources */,
 				FF315543288FA0E300E0885B /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

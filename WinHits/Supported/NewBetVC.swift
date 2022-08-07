@@ -16,14 +16,19 @@ class NewBetVC: UIViewController {
     @IBOutlet weak var loseButton: UIButton!
     @IBOutlet weak var winButton: UIButton!
     
-    let destinationVC = BetsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+    weak var delegate: NewBetSubVC?
+    
+    var bet = " "
+    var newBet = Bet(betName: " ", amount: " ", bet: " ", wtf: "0")
+    
+    @IBAction func addNewBet(_ sender: Any) {
+        newBet = Bet(betName: betName.text, amount: betAmount.text, bet: bet, wtf: "0")
+        delegate?.passData(data: newBet)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    var bet = ""
-    var newBet = Bet(betName: "", amount: "", bet: "")
     
     @IBAction func winButtonPressed(_ sender: UIButton) {
         bet = "WIN"
@@ -33,11 +38,6 @@ class NewBetVC: UIViewController {
         bet = "LOSE"
     }
     
-    @IBAction func addNewBet(_ sender: Any) {
-        newBet = Bet(betName: betName.text, amount: betAmount.text, bet: bet)
-        destinationVC.betList.append(newBet)
-        print(destinationVC.betList)
-        let indexPath = IndexPath(row: destinationVC.betList.count - 1, section: 0)
-        destinationVC.collectionView.insertItems(at: [indexPath])
-    }
+   
+    
 }

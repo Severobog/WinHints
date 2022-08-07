@@ -7,28 +7,34 @@
 
 import UIKit
 
-class BetsCollectionViewController: UICollectionViewController {
+protocol BetsCollectionViewControllerDelegate: AnyObject {
+    
+    func arrayUpdate(newBet: Bet)
+}
+
+class BetsCollectionViewController: UICollectionViewController, BetsCollectionViewControllerDelegate {
     
     var betList = [
-        Bet(betName: "Bet#1", amount: "100", bet: ""),
-        Bet(betName: "Bet#1", amount: "100", bet: ""),
-        Bet(betName: "Bet#3", amount: "200", bet: ""),
-        Bet(betName: "Bet#4", amount: "100", bet: "LOSE")
+        Bet(betName: "Bet#1", amount: "100", bet: "", wtf: "0"),
+        Bet(betName: "Bet#2", amount: "100", bet: "WIN", wtf: "0"),
+        Bet(betName: "Bet#3", amount: "200", bet: "", wtf: "0"),
+        Bet(betName: "Bet#4", amount: "100", bet: "LOSE", wtf: "0")
     ]
-    
-    var profitList = [Double]()
-    var shittyList = [String]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let testNavController: UINavigationController = UINavigationController.init()
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-        let collectionView: UICollectionViewController = UICollectionViewController.init(collectionViewLayout: layout)
-        testNavController.pushViewController(collectionView, animated: true)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? NewBetSubVC else { return }
+        destination.delegate = self
+    }
+    
+    func arrayUpdate(newBet: Bet) {
+        betList.append(newBet)
+        collectionView.reloadData()
+    }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -48,32 +54,47 @@ class BetsCollectionViewController: UICollectionViewController {
             
                 betCell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
                 
-                if betList[indexPath.row].bet != "" {
+                if betList[indexPath.row].bet != " " {
                     if betList[indexPath.row].bet == "WIN" {
-                        profitList.append(Double(betList[indexPath.row].amount)!)
-                        shittyList.append("shit")
-                        betList[indexPath.row].amount += " +"
-                        betCell.detailBetResultLabel.textColor = .green
-                        betCell.detailBetResultLabel.text = "WIN"
+                        if betList[indexPath.row].wtf == "0" {
+                            betList[indexPath.row].wtf = "1"
+                            betList[indexPath.row].amount += " +"
+                            betCell.detailBetResultLabel.textColor = .green
+                            betCell.detailBetResultLabel.text = "WIN"
+                        } else {
+                            betList[indexPath.row].wtf = "1"
+                            betCell.detailBetResultLabel.textColor = .green
+                            betCell.detailBetResultLabel.text = "WIN"
+                        }
                     } else { // if .bet == "LOSE"
-                        profitList.append(Double(betList[indexPath.row].amount)! * -1)
-                        shittyList.append("shit")
-                        betList[indexPath.row].amount += " -"
-                        betCell.detailBetResultLabel.textColor = .red
-                        betCell.detailBetResultLabel.text = "LOSE"
+                        if betList[indexPath.row].wtf == "0" {
+                            betList[indexPath.row].wtf = "1"
+                            betList[indexPath.row].amount += " -"
+                            betCell.detailBetResultLabel.textColor = .red
+                            betCell.detailBetResultLabel.text = "LOSE"
+                        } else {
+                            betList[indexPath.row].wtf = "1"
+                            betCell.detailBetResultLabel.textColor = .red
+                            betCell.detailBetResultLabel.text = "LOSE"
+                        }
                     }
                 } else {
-                    profitList.append(Double(betList[indexPath.row].amount)!)
-                    shittyList.append("shit")
-                    betCell.betResultLabel.isHidden = true
-                    betCell.detailBetResultLabel.isHidden = true
-                    betList[indexPath.row].amount += " +"
+                    if betList[indexPath.row].wtf == "0" {
+                        betList[indexPath.row].wtf = "1"
+                        betList[indexPath.row].betName = "Bet#\(indexPath.row + 1)"
+                        betCell.betResultLabel.isHidden = true
+                        betCell.detailBetResultLabel.isHidden = true
+                        
+                        if betList[indexPath.row].amount != "" {
+                            betList[indexPath.row].amount += " +"
+                        } else {
+                            betList[indexPath.row].amount = "+/-"
+                        }
+                    }
                 }
             
                     betCell.bets = betList[indexPath.row]
-                print(shittyList)
-                print(profitList)
-
+            
                 return betCell
             }
         return UICollectionViewCell()
@@ -90,7 +111,7 @@ extension BetsCollectionViewController: UICollectionViewDelegateFlowLayout{
         let avaibaleWidth = collectionView.frame.width - paddingWidth
         let widthPerItems = avaibaleWidth / itemsPerRow
         
-        return CGSize(width: widthPerItems, height: collectionView.frame.width)
+        return CGSize(width: widthPerItems - 20, height: collectionView.frame.width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

@@ -11,6 +11,7 @@ struct Bet {
     var betName: String!
     var amount:  String!
     var bet: String!
+    var wtf: String!
 }
 
 
