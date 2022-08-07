@@ -25,6 +25,7 @@
 		FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */; };
 		FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF82035289A917100355D9F /* DetailHintsVC.swift */; };
 		FFFE6E3D289E4E79007DC08B /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */; };
+		FFFE6E41289EECBF007DC08B /* BetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewBetVC.swift; path = WinHits/Supported/NewBetVC.swift; sourceTree = SOURCE_ROOT; };
 		FFF82035289A917100355D9F /* DetailHintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHintsVC.swift; sourceTree = "<group>"; };
 		FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetsViewController.swift; sourceTree = "<group>"; };
+		FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				FFFE6E3C289E4E79007DC08B /* BetsViewController.swift */,
 				FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */,
+				FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */,
 			);
 			path = "Bets Screen";
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				FF150371288DBA7A00E242EA /* ProfitModel.swift in Sources */,
 				CF225CB627E1E11500EAA251 /* AppDelegate.swift in Sources */,
 				FFFE6E3D289E4E79007DC08B /* BetsViewController.swift in Sources */,
+				FFFE6E41289EECBF007DC08B /* BetsCollectionViewController.swift in Sources */,
 				FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */,
 				FF150373288DBA9A00E242EA /* BettingHintsView.swift in Sources */,
 				FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */,

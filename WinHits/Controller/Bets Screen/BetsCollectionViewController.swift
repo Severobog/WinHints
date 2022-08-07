@@ -1,43 +1,48 @@
 //
-//  ViewController.swift
+//  BetsCollectionViewController.swift
 //  WinHits
 //
-//  Created by Демид Стариков on 24.07.2022.
+//  Created by Демид Стариков on 06.08.2022.
 //
 
 import UIKit
 
-class BetsViewController: UIViewController {
+class BetsCollectionViewController: UICollectionViewController {
     
     var betList = [
         Bet(betName: "Bet#1", amount: "100", bet: ""),
-        Bet(betName: "Bet#2", amount: "100", bet: "WIN"),
-        Bet(betName: "Bet#3", amount: "100", bet: ""),
+        Bet(betName: "Bet#1", amount: "100", bet: ""),
+        Bet(betName: "Bet#3", amount: "200", bet: ""),
         Bet(betName: "Bet#4", amount: "100", bet: "LOSE")
     ]
     
     var profitList = [Double]()
     var shittyList = [String]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "bgimage")
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
-    
-}
-
-extension BetsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        betList.count
+        let testNavController: UINavigationController = UINavigationController.init()
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+        let collectionView: UICollectionViewController = UICollectionViewController.init(collectionViewLayout: layout)
+        testNavController.pushViewController(collectionView, animated: true)
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    // MARK: UICollectionViewDataSource
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return betList.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let betCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BetsCell", for: indexPath) as? BetsCollectionViewCell {
             
@@ -65,20 +70,19 @@ extension BetsViewController: UICollectionViewDataSource, UICollectionViewDelega
                     betList[indexPath.row].amount += " +"
                 }
             
-                betCell.bets = betList[indexPath.row]
-            print(shittyList)
-            print(profitList)
+                    betCell.bets = betList[indexPath.row]
+                print(shittyList)
+                print(profitList)
 
-            return betCell
-        }
-                return UICollectionViewCell()
+                return betCell
+            }
+        return UICollectionViewCell()
         
     }
-    
+
 }
 
-
-extension BetsViewController: UICollectionViewDelegateFlowLayout{
+extension BetsCollectionViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 1
