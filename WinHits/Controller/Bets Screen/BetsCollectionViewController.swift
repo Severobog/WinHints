@@ -87,8 +87,6 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
                         
                         if betList[indexPath.row].amount != "" {
                             betList[indexPath.row].amount += " +"
-                        } else {
-                            betList[indexPath.row].amount = "+"
                         }
                     }
                 }
