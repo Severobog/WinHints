@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CoreData/BetMO+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:WinHits.xcodeproj">
    </FileRef>
    <FileRef
