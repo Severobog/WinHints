@@ -9,18 +9,15 @@ import UIKit
 
 protocol NewBetSubVCDelegate {
     
-    func passData(data: Bet)
+    func passData(newBetName: String, newBetAmount: String, newBetBet: String, newBetWtf: String)
 }
 
 class NewBetSubVC: UIViewController, NewBetSubVCDelegate {
     
     weak var delegate: BetsCollectionViewControllerDelegate?
     
-    var mainData = Bet(betName: " ", amount: " ", bet: " ", wtf: "0")
-    
-    func passData(data: Bet) {
-        mainData = data
-        delegate?.arrayUpdate(newBet: mainData)
+    func passData(newBetName: String, newBetAmount: String, newBetBet: String, newBetWtf: String) {
+        delegate?.arrayUpdate(newBetName: newBetName, newBetAmount: newBetAmount, newBetBet: newBetBet, newBetWtf: newBetWtf)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

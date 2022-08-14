@@ -23,7 +23,10 @@
 		FF4E47462889EE930075DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4E47452889EE930075DAA7 /* Main.storyboard */; };
 		FF5BBADE28A0710D00293728 /* NewBetSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5BBADD28A0710D00293728 /* NewBetSubVC.swift */; };
 		FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C71622889DF4F00D23F22 /* ChartsVC.swift */; };
-		FFBD443F28A0959600E07238 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFBD443D28A0959600E07238 /* Model.xcdatamodeld */; };
+		FFDE46CF28A892960058E665 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFDE46CD28A892960058E665 /* Model.xcdatamodeld */; };
+		FFDE46D628A89B630058E665 /* NewBet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE46D428A89B630058E665 /* NewBet+CoreDataClass.swift */; };
+		FFDE46D728A89B630058E665 /* NewBet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE46D528A89B630058E665 /* NewBet+CoreDataProperties.swift */; };
+		FFDE46D928A89D1B0058E665 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE46D828A89D1B0058E665 /* CoreDataManager.swift */; };
 		FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */; };
 		FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF82035289A917100355D9F /* DetailHintsVC.swift */; };
 		FFFE6E41289EECBF007DC08B /* BetsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */; };
@@ -50,7 +53,10 @@
 		FF4E47452889EE930075DAA7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FF5BBADD28A0710D00293728 /* NewBetSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBetSubVC.swift; sourceTree = "<group>"; };
 		FF9C71622889DF4F00D23F22 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
-		FFBD443E28A0959600E07238 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FFDE46CE28A892960058E665 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FFDE46D428A89B630058E665 /* NewBet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewBet+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FFDE46D528A89B630058E665 /* NewBet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewBet+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FFDE46D828A89D1B0058E665 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = "WinHits/Model/Bets Screen/CoreDataManager.swift"; sourceTree = SOURCE_ROOT; };
 		FFE9EC1C2899201D004E2C8C /* NewBetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewBetVC.swift; path = WinHits/Supported/NewBetVC.swift; sourceTree = SOURCE_ROOT; };
 		FFF82035289A917100355D9F /* DetailHintsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHintsVC.swift; sourceTree = "<group>"; };
 		FFFE6E40289EECBF007DC08B /* BetsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -148,11 +154,12 @@
 		FFAEF590288C8B9B00FA0837 /* Supported */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE46D428A89B630058E665 /* NewBet+CoreDataClass.swift */,
+				FFDE46D528A89B630058E665 /* NewBet+CoreDataProperties.swift */,
 				FF4E47452889EE930075DAA7 /* Main.storyboard */,
 				CF225CBE27E1E11700EAA251 /* Assets.xcassets */,
 				CF225CC027E1E11700EAA251 /* LaunchScreen.storyboard */,
 				CF225CC327E1E11700EAA251 /* Info.plist */,
-				FFBD443D28A0959600E07238 /* Model.xcdatamodeld */,
 			);
 			path = Supported;
 			sourceTree = "<group>";
@@ -237,6 +244,8 @@
 		FFE6A76A288CCE6A00276BF3 /* Bets Screen */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE46D828A89D1B0058E665 /* CoreDataManager.swift */,
+				FFDE46CD28A892960058E665 /* Model.xcdatamodeld */,
 				FF15036C288D0DC700E242EA /* BetsModel.swift */,
 			);
 			path = "Bets Screen";
@@ -360,15 +369,18 @@
 				FF150371288DBA7A00E242EA /* ProfitModel.swift in Sources */,
 				CF225CB627E1E11500EAA251 /* AppDelegate.swift in Sources */,
 				FFFE6E41289EECBF007DC08B /* BetsCollectionViewController.swift in Sources */,
+				FFDE46D928A89D1B0058E665 /* CoreDataManager.swift in Sources */,
 				FF9C71632889DF4F00D23F22 /* ChartsVC.swift in Sources */,
 				FF150373288DBA9A00E242EA /* BettingHintsView.swift in Sources */,
+				FFDE46D628A89B630058E665 /* NewBet+CoreDataClass.swift in Sources */,
 				FFF82036289A917100355D9F /* DetailHintsVC.swift in Sources */,
 				FF01899028885FB600E3BB99 /* BettingHintsModel.swift in Sources */,
 				FF01898E28885E7A00E3BB99 /* BettingHintsViewController.swift in Sources */,
 				FFE9EC1D2899201D004E2C8C /* NewBetVC.swift in Sources */,
 				CF225CB827E1E11500EAA251 /* SceneDelegate.swift in Sources */,
 				FF15036F288DBA4E00E242EA /* PofitView.swift in Sources */,
-				FFBD443F28A0959600E07238 /* Model.xcdatamodeld in Sources */,
+				FFDE46D728A89B630058E665 /* NewBet+CoreDataProperties.swift in Sources */,
+				FFDE46CF28A892960058E665 /* Model.xcdatamodeld in Sources */,
 				FF150367288CD3BD00E242EA /* BetsCollectionViewCell.swift in Sources */,
 				FF15036D288D0DC700E242EA /* BetsModel.swift in Sources */,
 				FF5BBADE28A0710D00293728 /* NewBetSubVC.swift in Sources */,
@@ -592,12 +604,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FFBD443D28A0959600E07238 /* Model.xcdatamodeld */ = {
+		FFDE46CD28A892960058E665 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FFBD443E28A0959600E07238 /* Model.xcdatamodel */,
+				FFDE46CE28A892960058E665 /* Model.xcdatamodel */,
 			);
-			currentVersion = FFBD443E28A0959600E07238 /* Model.xcdatamodel */;
+			currentVersion = FFDE46CE28A892960058E665 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

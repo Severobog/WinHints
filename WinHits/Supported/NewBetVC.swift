@@ -19,11 +19,15 @@ class NewBetVC: UIViewController {
     weak var delegate: NewBetSubVC?
     
     var bet = " "
-    var newBet = Bet(betName: " ", amount: " ", bet: " ", wtf: "0")
     
     @IBAction func addNewBet(_ sender: Any) {
-        newBet = Bet(betName: betName.text, amount: betAmount.text, bet: bet, wtf: "0")
-        delegate?.passData(data: newBet)
+        let newBetName = betName.text!
+        let newBetAmount = betAmount.text!
+        let newBetBet = bet
+        let newBetWtf = "0"
+        delegate?.passData(newBetName: newBetName, newBetAmount: newBetAmount, newBetBet: newBetBet, newBetWtf: newBetWtf)
+        
+        
     }
     
     override func viewDidLoad() {

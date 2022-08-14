@@ -6,94 +6,148 @@
 //
 
 import UIKit
+import CoreData
 
 protocol BetsCollectionViewControllerDelegate: AnyObject {
     
-    func arrayUpdate(newBet: Bet)
+    func arrayUpdate(newBetName: String, newBetAmount: String, newBetBet: String, newBetWtf: String)
 }
 
 class BetsCollectionViewController: UICollectionViewController, BetsCollectionViewControllerDelegate {
     
-    var betList = [
-        Bet(betName: "Bet#1", amount: "100", bet: "", wtf: "0"),
-        Bet(betName: "Bet#2", amount: "100", bet: "WIN", wtf: "0"),
-        Bet(betName: "Bet#3", amount: "200", bet: "", wtf: "0"),
-        Bet(betName: "Bet#4", amount: "100", bet: "LOSE", wtf: "0")
-    ]
+    struct Constants {
+        static let entity = "NewBet"
+        static let sortName = "name"
+        static let cellName = "BetsCell"
+    }
+    
+    var fetchResultController: NSFetchedResultsController<NSFetchRequestResult> = {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.entity)
+        let sortDesriptor = NSSortDescriptor(key: Constants.sortName, ascending:  true)
+        fetchRequest.sortDescriptors = [sortDesriptor]
+        let fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.instance.context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        return fetchResultController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewBet")
+        
+        do {
+            try fetchResultController.performFetch()
+        } catch {
+             print(error)
+        }
+        
+        //Удаление ВСЕХ данных в CoreData
+//        do {
+//            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
+//            for result in results as! [NSManagedObject] {
+//                CoreDataManager.instance.context.delete(result)
+//            }
+//        } catch {
+//            print(error)
+//        }
+//        CoreDataManager.instance.saveContext()
+//
     }
+    
+
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? NewBetSubVC else { return }
         destination.delegate = self
     }
     
-    func arrayUpdate(newBet: Bet) {
-        betList.append(newBet)
+    func arrayUpdate(newBetName: String, newBetAmount: String, newBetBet: String, newBetWtf: String) {
+        
+        do {
+            try fetchResultController.performFetch()
+        } catch {
+            print(error)
+        }
+        
+        let newBetObj = NewBet()
+        
+        newBetObj.name = newBetName
+        newBetObj.amount = newBetAmount
+        newBetObj.bet = newBetBet
+        newBetObj.wtf = newBetWtf
+        
+        CoreDataManager.instance.saveContext()
+        
         collectionView.reloadData()
     }
     
+  
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return fetchResultController.sections?.count ?? 0
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return betList.count
+        if let sections = fetchResultController.sections {
+            return sections[section].numberOfObjects
+        } else {
+            return 0
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let betCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BetsCell", for: indexPath) as? BetsCollectionViewCell {
+        if let betCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellName, for: indexPath) as? BetsCollectionViewCell {
             
-                betCell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
+            betCell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
+            
+            let newBet = fetchResultController.object(at: indexPath) as! NewBet
                 
-                if betList[indexPath.row].bet != " " {
-                    if betList[indexPath.row].bet == "WIN" {
-                        if betList[indexPath.row].wtf == "0" {
-                            betList[indexPath.row].wtf = "1"
-                            betList[indexPath.row].amount += " +"
+                if newBet.bet != " " {
+                    if newBet.bet == "WIN" {
+                        if newBet.wtf == "0" {
+                            newBet.wtf = "1"
+                            newBet.amount! += " +"
                             betCell.detailBetResultLabel.textColor = .green
                             betCell.detailBetResultLabel.text = "WIN"
                         } else {
-                            betList[indexPath.row].wtf = "1"
+                            newBet.wtf = "1"
                             betCell.detailBetResultLabel.textColor = .green
                             betCell.detailBetResultLabel.text = "WIN"
                         }
                     } else { // if .bet == "LOSE"
-                        if betList[indexPath.row].wtf == "0" {
-                            betList[indexPath.row].wtf = "1"
-                            betList[indexPath.row].amount += " -"
+                        if newBet.wtf == "0" {
+                            newBet.wtf = "1"
+                            newBet.amount! += " -"
                             betCell.detailBetResultLabel.textColor = .red
                             betCell.detailBetResultLabel.text = "LOSE"
                         } else {
-                            betList[indexPath.row].wtf = "1"
+                            newBet.wtf = "1"
                             betCell.detailBetResultLabel.textColor = .red
                             betCell.detailBetResultLabel.text = "LOSE"
                         }
                     }
                 } else {
-                    if betList[indexPath.row].wtf == "0" {
-                        betList[indexPath.row].wtf = "1"
-                        betList[indexPath.row].betName = "Bet#\(indexPath.row + 1)"
+                    if newBet.wtf == "0" {
+                        newBet.wtf = "1"
+                        newBet.name = "NewBet"
                         betCell.betResultLabel.isHidden = true
                         betCell.detailBetResultLabel.isHidden = true
                         
-                        if betList[indexPath.row].amount != "" {
-                            betList[indexPath.row].amount += " +"
+                        if newBet.amount != "" {
+                            newBet.amount! += " +"
                         }
                     }
                 }
             
-                    betCell.bets = betList[indexPath.row]
+                    betCell.bets = newBet
             
-                return betCell
+                return betCell 
             }
         return UICollectionViewCell()
         
