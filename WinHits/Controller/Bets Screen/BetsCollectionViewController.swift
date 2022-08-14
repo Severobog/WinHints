@@ -33,6 +33,8 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundView = UIImageView(image: UIImage(named: "bgimage"))
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewBet")
         
         do {
