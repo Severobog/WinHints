@@ -51,7 +51,7 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
 //            print(error)
 //        }
 //        CoreDataManager.instance.saveContext()
-//
+
     }
     
 
@@ -64,12 +64,6 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
     
     func arrayUpdate(newBetName: String, newBetAmount: String, newBetBet: String, newBetWtf: String) {
         
-        do {
-            try fetchResultController.performFetch()
-        } catch {
-            print(error)
-        }
-        
         let newBetObj = NewBet()
         
         newBetObj.name = newBetName
@@ -80,6 +74,11 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
         CoreDataManager.instance.saveContext()
         
         collectionView.reloadData()
+        do {
+            try fetchResultController.performFetch()
+        } catch {
+            print(error)
+        }
     }
     
   
@@ -116,7 +115,6 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
                             betCell.detailBetResultLabel.textColor = .green
                             betCell.detailBetResultLabel.text = "WIN"
                         } else {
-                            newBet.wtf = "1"
                             betCell.detailBetResultLabel.textColor = .green
                             betCell.detailBetResultLabel.text = "WIN"
                         }
@@ -127,7 +125,6 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
                             betCell.detailBetResultLabel.textColor = .red
                             betCell.detailBetResultLabel.text = "LOSE"
                         } else {
-                            newBet.wtf = "1"
                             betCell.detailBetResultLabel.textColor = .red
                             betCell.detailBetResultLabel.text = "LOSE"
                         }
@@ -135,7 +132,7 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
                 } else {
                     if newBet.wtf == "0" {
                         newBet.wtf = "1"
-                        newBet.name = "NewBet"
+                        newBet.name = "Blank Bet"
                         betCell.betResultLabel.isHidden = true
                         betCell.detailBetResultLabel.isHidden = true
                         
