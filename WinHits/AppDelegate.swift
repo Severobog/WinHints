@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
  @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,4 +22,3 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 }
-

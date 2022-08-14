@@ -15,9 +15,9 @@ class BetsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var profitLabel: UILabel!
     var wtf: String!
     
-    var bets: Bet? {
+    var bets: NewBet? {
         didSet {
-            mainLabel.text = bets?.betName
+            mainLabel.text = bets?.name
             betResultLabel.text = "Bet result: "
             detailBetResultLabel.text = bets?.bet
             profitLabel.text = bets?.amount

@@ -3,10 +3,10 @@
     <entity name="NewBet" representedClassName="NewBet" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="String"/>
         <attribute name="bet" optional="YES" attributeType="String"/>
-        <attribute name="betName" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="wtf" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="NewBet" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="NewBet" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
