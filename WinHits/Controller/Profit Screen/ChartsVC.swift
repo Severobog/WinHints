@@ -12,15 +12,15 @@ class ChartsViewController: UIViewController {
 
     @IBOutlet weak var lineChartView: LineChartView!
     
-    var months = [" ", "Jan", "Feb", "Mar", "Apr"]
+    let newObj = NewBet()
+    
+    var months = ["Feb", "Jan", "Feb", "Mar", "Apr"]
     var unitsSold = [100.0, 100.0, 100.0, -200.0, 100.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setChart(dataPoints: months, values: unitsSold)
-                
-        
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "bgimage")

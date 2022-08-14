@@ -76,6 +76,7 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
         CoreDataManager.instance.saveContext()
         
         collectionView.reloadData()
+        
         do {
             try fetchResultController.performFetch()
         } catch {
