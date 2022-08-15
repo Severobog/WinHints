@@ -14,8 +14,8 @@ class ChartsViewController: UIViewController {
     
     let newObj = NewBet()
     
-    var months = ["Feb", "Jan", "Feb", "Mar", "Apr"]
-    var unitsSold = [100.0, 100.0, 100.0, -200.0, 100.0]
+    var months = ["Feb","Feb", "Jan", "Feb"]
+    var unitsSold = [0.0, 100.0, -200.0, 200.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ChartsViewController: UIViewController {
         backgroundImage.image = UIImage(named: "bgimage")
         self.view.insertSubview(backgroundImage, at: 0)
         lineChartView.backgroundColor = .tintColor
-    }
+        }
     
     func setChart(dataPoints: [String], values: [Double]) {
             

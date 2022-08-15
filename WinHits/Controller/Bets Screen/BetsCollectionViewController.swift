@@ -43,7 +43,7 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
              print(error)
         }
         
-        //Удаление ВСЕХ данных в CoreData
+//        Удаление ВСЕХ данных в CoreData
 //        do {
 //            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
 //            for result in results as! [NSManagedObject] {
@@ -52,12 +52,15 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
 //        } catch {
 //            print(error)
 //        }
+//
+//        do {
+//            try fetchResultController.performFetch()
+//        } catch {
+//             print(error)
+//        }
+//
 //        CoreDataManager.instance.saveContext()
-
     }
-    
-
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? NewBetSubVC else { return }
@@ -73,8 +76,6 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
         newBetObj.bet = newBetBet
         newBetObj.wtf = newBetWtf
         
-        CoreDataManager.instance.saveContext()
-        
         collectionView.reloadData()
         
         do {
@@ -82,6 +83,8 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
         } catch {
             print(error)
         }
+        
+        CoreDataManager.instance.saveContext()
     }
     
   
@@ -109,7 +112,7 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
             betCell.backgroundColor = UIColor(red: 0.159, green: 0.522, blue: 0.733, alpha: 1)
             
             let newBet = fetchResultController.object(at: indexPath) as! NewBet
-                
+            
                 if newBet.bet != " " {
                     if newBet.bet == "WIN" {
                         if newBet.wtf == "0" {
@@ -136,15 +139,18 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
                     if newBet.wtf == "0" {
                         newBet.wtf = "1"
                         newBet.name = "Blank Bet"
-                        betCell.betResultLabel.isHidden = true
-                        betCell.detailBetResultLabel.isHidden = true
+                        betCell.betResultLabel.text = ""
+                        betCell.detailBetResultLabel.text = ""
                         
                         if newBet.amount != "" {
                             newBet.amount! += " +"
                         }
+                    } else {
+                        betCell.detailBetResultLabel.text = ""
+                        betCell.betResultLabel.text = ""
                     }
+                    
                 }
-            
                     betCell.bets = newBet
             
                 return betCell 
