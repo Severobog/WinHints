@@ -26,8 +26,8 @@ class NewBetVC: UIViewController {
         let newBetBet = bet
         let newBetWtf = "0"
         delegate?.passData(newBetName: newBetName, newBetAmount: newBetAmount, newBetBet: newBetBet, newBetWtf: newBetWtf)
-        
-        
+
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

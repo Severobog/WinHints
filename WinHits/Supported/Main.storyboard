@@ -170,7 +170,14 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="labelColor"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" systemColor="labelColor"/>
+                            <color key="textShadowColor" systemColor="labelColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <color key="textShadowColor" systemColor="labelColor"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -330,9 +337,17 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.00042134045232848915" green="0.5880929860862405" blue="0.98999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="labelColor"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" systemColor="labelColor"/>
+                            <color key="textShadowColor" systemColor="labelColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <color key="textShadowColor" systemColor="labelColor"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -385,15 +400,15 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bet name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXf-O1-EA7">
                                 <rect key="frame" x="32" y="75" width="265" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iRY-oo-xzx">
                                 <rect key="frame" x="32" y="117" width="265" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMs-Ba-t4W">
-                                <rect key="frame" x="115" y="220" width="99" height="22"/>
+                                <rect key="frame" x="36" y="220" width="257" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -417,7 +432,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Odds" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWi-98-pe8">
                                 <rect key="frame" x="32" y="159" width="265" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* You can ommit this parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEQ-VK-jVl">
                                 <rect key="frame" x="69" y="311" width="191" height="16"/>
@@ -481,7 +496,7 @@
                             <constraint firstItem="cQY-lK-NkZ" firstAttribute="top" secondItem="LMs-Ba-t4W" secondAttribute="bottom" constant="8" symbolic="YES" id="csl-Us-g9F"/>
                             <constraint firstItem="Z59-Ey-WJM" firstAttribute="leading" secondItem="9iZ-cn-hS2" secondAttribute="leading" constant="36" id="fXc-0f-9xx"/>
                             <constraint firstItem="cQY-lK-NkZ" firstAttribute="leading" secondItem="9iZ-cn-hS2" secondAttribute="leading" constant="32" id="gtC-sF-1n9"/>
-                            <constraint firstItem="LMs-Ba-t4W" firstAttribute="leading" secondItem="9iZ-cn-hS2" secondAttribute="leading" constant="115" id="krr-MW-kvG"/>
+                            <constraint firstItem="LMs-Ba-t4W" firstAttribute="leading" secondItem="9iZ-cn-hS2" secondAttribute="leading" constant="36" id="krr-MW-kvG"/>
                             <constraint firstItem="eEQ-VK-jVl" firstAttribute="centerX" secondItem="LMs-Ba-t4W" secondAttribute="centerX" id="lP0-kg-2m0"/>
                             <constraint firstItem="eEQ-VK-jVl" firstAttribute="centerX" secondItem="eWi-98-pe8" secondAttribute="centerX" id="oNR-TG-H8X"/>
                             <constraint firstItem="eEQ-VK-jVl" firstAttribute="centerX" secondItem="WXf-O1-EA7" secondAttribute="centerX" id="oyX-DX-pxl"/>
