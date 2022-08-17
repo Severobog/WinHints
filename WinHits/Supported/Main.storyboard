@@ -17,12 +17,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgE-wk-pvS">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.00042173819379999998" green="0.58864814040000002" blue="0.99093455080000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="labelColor"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" systemColor="labelColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" systemColor="labelColor"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
@@ -30,6 +28,12 @@
                             <color key="textColor" systemColor="labelColor"/>
                             <color key="textShadowColor" systemColor="labelColor"/>
                         </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.22784698010000001" green="0.4777545929" blue="0.87847667929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.22784698010000001" green="0.4777545929" blue="0.87847667929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="vUl-9Y-tEU" kind="relationship" relationship="rootViewController" id="hXu-Gj-Dmf"/>
@@ -179,6 +183,12 @@
                             <color key="textColor" systemColor="labelColor"/>
                             <color key="textShadowColor" systemColor="labelColor"/>
                         </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.22784698010000001" green="0.4777545929" blue="0.87847667929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.22784698010000001" green="0.4777545929" blue="0.87847667929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="A6Q-tu-zSu" kind="relationship" relationship="rootViewController" id="hJm-QZ-poM"/>
@@ -349,6 +359,12 @@
                             <color key="textColor" systemColor="labelColor"/>
                             <color key="textShadowColor" systemColor="labelColor"/>
                         </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.22784698010000001" green="0.4777545929" blue="0.87847667929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.22784698010000001" green="0.4777545929" blue="0.87847667929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="5pY-vm-6Mv" kind="relationship" relationship="rootViewController" id="PSg-Zk-kHu"/>
