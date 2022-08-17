@@ -33,6 +33,8 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.tabBar.unselectedItemTintColor = .white
+        
         collectionView.backgroundView = UIImageView(image: UIImage(named: "bgimage"))
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NewBet")
@@ -113,6 +115,7 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
             
             let newBet = fetchResultController.object(at: indexPath) as! NewBet
             
+            guard newBet.name == "" && newBet.amount == "" && newBet.bet == "" else {
                 if newBet.bet != " " {
                     if newBet.bet == "WIN" {
                         if newBet.wtf == "0" {
@@ -152,9 +155,9 @@ class BetsCollectionViewController: UICollectionViewController, BetsCollectionVi
                     
                 }
                     betCell.bets = newBet
-            
                 return betCell 
             }
+        }
         return UICollectionViewCell()
         
     }

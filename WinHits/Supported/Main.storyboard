@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rl7-MV-SUJ">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment version="4864" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -325,7 +327,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.00042173819379999998" green="0.58864814040000002" blue="0.99093455080000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.58864945170000005" blue="0.99093574289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.58864945170000005" blue="0.99093574289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" name="AccentColor"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -385,6 +387,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sf-ex-5ic" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="132" width="375" height="335"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4Sf-ex-5ic" secondAttribute="height" multiplier="75:67" id="0dH-XI-7PL"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QNY-o4-Bio"/>
@@ -392,7 +397,7 @@
                         <constraints>
                             <constraint firstItem="4Sf-ex-5ic" firstAttribute="leading" secondItem="QNY-o4-Bio" secondAttribute="leading" id="AZk-Vf-9yn"/>
                             <constraint firstItem="4Sf-ex-5ic" firstAttribute="top" secondItem="QNY-o4-Bio" secondAttribute="top" constant="44" id="D8s-RR-sLX"/>
-                            <constraint firstItem="QNY-o4-Bio" firstAttribute="bottom" secondItem="4Sf-ex-5ic" secondAttribute="bottom" constant="262" id="J4Q-aZ-AJL"/>
+                            <constraint firstItem="QNY-o4-Bio" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="4Sf-ex-5ic" secondAttribute="bottom" constant="262" id="J4Q-aZ-AJL"/>
                             <constraint firstItem="4Sf-ex-5ic" firstAttribute="trailing" secondItem="QNY-o4-Bio" secondAttribute="trailing" id="qlv-SM-2Bh"/>
                         </constraints>
                     </view>
@@ -539,9 +544,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Union" width="6" height="6"/>
-        <image name="Union (1)" width="7.3333334922790527" height="7.3333334922790527"/>
-        <image name="Union (2)" width="7.3333334922790527" height="6"/>
+        <image name="Union" width="18" height="18"/>
+        <image name="Union (1)" width="22" height="22"/>
+        <image name="Union (2)" width="22" height="18"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
